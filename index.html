@@ -1,1 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team DNF Challenge Roth 2027 &bull; Race Hub</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Navigation with Language Switcher & Mobile Toggle -->
+  <header class="navbar" id="top">
+    <div class="container nav-content">
+      <a href="#" class="brand">TEAM DNF<span> &bull; ROTH 2027</span></a>
+      
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links desktop-nav">
+        <a href="#stats" data-i18n="nav_stats">
+          <svg class="icon-nav" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+          Overview
+        </a>
+        <a href="#targets" data-i18n="nav_targets">
+          <svg class="icon-nav" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="2"/></svg>
+          Targets
+        </a>
+        <a href="#nutrition" data-i18n="nav_fuel">
+          <svg class="icon-nav" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          Fuel Plan
+        </a>
+        <a href="#profiles" data-i18n="nav_course">
+          <svg class="icon-nav" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+          Course
+        </a>
+        <a href="#schedule" data-i18n="nav_schedule">
+          <svg class="icon-nav" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Itinerary
+        </a>
+        <a href="#checklist" class="nav-btn" data-i18n="nav_checklist">
+          <svg class="icon-nav" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Checklist
+        </a>
+        <!-- Language Switcher Button -->
+        <button class="lang-toggle-btn" id="langToggleDesktop" aria-label="Toggle language">
+          <svg class="icon-nav" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-text" id="langLabelDesktop">繁中</span>
+        </button>
+      </nav>
+
+      <!-- Mobile Actions Container -->
+      <div class="mobile-actions">
+        <button class="lang-toggle-btn lang-btn-mobile" id="langToggleMobile" aria-label="Toggle language">
+          <svg class="icon-nav" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-text" id="langLabelMobile">繁中</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line class="line top-line" x1="3" y1="6" x2="21" y2="6"/>
+            <line class="line mid-line" x1="3" y1="12" x2="21" y2="12"/>
+            <line class="line bot-line" x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#stats" class="mobile-link" data-i18n="nav_stats">
+        <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+        Overview & Stats
+      </a>
+      <a href="#targets" class="mobile-link" data-i18n="nav_targets">
+        <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="2"/></svg>
+        Target Splits
+      </a>
+      <a href="#nutrition" class="mobile-link" data-i18n="nav_fuel">
+        <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Maurten Fuel Plan
+      </a>
+      <a href="#profiles" class="mobile-link" data-i18n="nav_course">
+        <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+        Course Breakdown
+      </a>
+      <a href="#schedule" class="mobile-link" data-i18n="nav_schedule">
+        <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Schedule & Navigation
+      </a>
+      <a href="#checklist" class="mobile-link highlight-link" data-i18n="nav_checklist">
+        <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        Complete Checklist
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="hero" id="overview">
+    <div class="container hero-content">
+      <div class="badge-pill">
+        <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span data-i18n="hero_pill">Sunday, 4 July 2027 &bull; Roth & Nuremberg, Germany</span>
+      </div>
+      <h1 data-i18n="hero_title">Team DNF Challenge Roth 2027</h1>
+      <p class="hero-subtitle" data-i18n="hero_subtitle">Sub-12 pacing matrix, 2026 race benchmarks, Maurten hydrogel fueling protocol, turn-by-turn itinerary driving routes, and complete packing checklist.</p>
+
+      <!-- Live Dynamic Countdown -->
+      <div class="countdown-bar" id="countdown">
+        <div class="time-item"><span id="days">---</span><label data-i18n="cd_days">Days</label></div>
+        <div class="time-sep">:</div>
+        <div class="time-item"><span id="hours">--</span><label data-i18n="cd_hours">Hours</label></div>
+        <div class="time-sep">:</div>
+        <div class="time-item"><span id="minutes">--</span><label data-i18n="cd_mins">Mins</label></div>
+        <div class="time-sep">:</div>
+        <div class="time-item"><span id="seconds">--</span><label data-i18n="cd_secs">Secs</label></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Race Overview & 2026 Statistics -->
+  <section class="section border-bottom" id="stats">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-heading">
+          <svg class="icon-section" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+          <h2 data-i18n="sec_stats_title">Race Overview & 2026 Statistics</h2>
+        </div>
+        <p data-i18n="sec_stats_sub">Key benchmarks and participation metrics from the 2026 edition</p>
+      </div>
+
+      <div class="grid four-col">
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span data-i18n="stat_1_tag">Avg Finish Time</span>
+          </div>
+          <div class="stat-value">11h 28m</div>
+          <div class="stat-sub" data-i18n="stat_1_sub">Overall Average (2026)</div>
+          <p class="card-desc" data-i18n="stat_1_desc">Men's Avg: <strong>11h 19m</strong> &bull; Women's Avg: <strong>12h 08m</strong> across 3,500+ individual finishers.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span data-i18n="stat_2_tag">Athletes on Course</span>
+          </div>
+          <div class="stat-value">5,000+</div>
+          <div class="stat-sub" data-i18n="stat_2_sub">85+ Nations Represented</div>
+          <p class="card-desc" data-i18n="stat_2_desc">~3,500 individual starters plus 650 relay teams (2,000 relay athletes) on the Bavarian course.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span data-i18n="stat_3_tag">Volunteer Force</span>
+          </div>
+          <div class="stat-value">7,500+</div>
+          <div class="stat-sub" data-i18n="stat_3_sub">Community Support</div>
+          <p class="card-desc" data-i18n="stat_3_desc">The legendary backbone of Roth, staffing transitions, canal rescue, and aid stations every 2 km.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span data-i18n="stat_4_tag">Spectators Along Course</span>
+          </div>
+          <div class="stat-value">300,000+</div>
+          <div class="stat-sub" data-i18n="stat_4_sub">Electric Atmosphere</div>
+          <p class="card-desc" data-i18n="stat_4_desc">Over 40,000 lining Solarer Berg alone, creating the iconic Tour de France-style human tunnel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Performance Target Splits -->
+  <section class="section border-bottom" id="targets">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-heading">
+          <svg class="icon-section" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="2"/></svg>
+          <h2 data-i18n="sec_targets_title">Target Splits</h2>
+        </div>
+        <p data-i18n="sec_targets_sub">Sub-12h pacing matrix</p>
+      </div>
+
+      <div class="grid four-col">
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20"/><path d="M20 12c-2.5 0-3.5-3-6-3s-3.5 3-6 3-3.5-3-6-3"/></svg>
+            <span data-i18n="tgt_swim_tag">Swim &bull; 3.8 km</span>
+          </div>
+          <div class="stat-value">1h 22m</div>
+          <div class="stat-sub" data-i18n="tgt_swim_pace">2:10 / 100m</div>
+          <p class="card-desc" data-i18n="tgt_swim_desc">Main-Danube Canal. Calm fresh water, single turnaround buoy, zero current.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>
+            <span data-i18n="tgt_bike_tag">Bike &bull; 180 km</span>
+          </div>
+          <div class="stat-value">5h 48m</div>
+          <div class="stat-sub" data-i18n="tgt_bike_pace">31.0 km/h avg</div>
+          <p class="card-desc" data-i18n="tgt_bike_desc">2-lap loop (~1,200m elev). Sustained aero on flats, metered power on climbs.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 4v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
+            <span data-i18n="tgt_run_tag">Run &bull; 42.2 km</span>
+          </div>
+          <div class="stat-value">4h 34m</div>
+          <div class="stat-sub" data-i18n="tgt_run_pace">6:30 / km</div>
+          <p class="card-desc" data-i18n="tgt_run_desc">Canal gravel towpath + town loops. Walk aid stations to fuel and cool down.</p>
+        </div>
+
+        <div class="card card-highlight">
+          <div class="card-tag tag-dark">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span data-i18n="tgt_sub12_tag">Sub-12 Target</span>
+          </div>
+          <div class="stat-value stat-primary">11h 57m</div>
+          <div class="stat-sub" data-i18n="tgt_sub12_trans">~12m Transitions</div>
+          <p class="card-desc" data-i18n="tgt_sub12_desc">Combined T1/T2 buffer with consistent hydration and carb intake.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Maurten Fueling Strategy Section -->
+  <section class="section border-bottom" id="nutrition">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-heading">
+          <svg class="icon-section" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <h2 data-i18n="sec_fuel_title">Maurten Fueling Protocol</h2>
+        </div>
+        <p data-i18n="sec_fuel_sub">Hourly carbohydrate & electrolyte strategy targeting 80–90g carbs/hr on bike and 60–75g carbs/hr on run</p>
+      </div>
+
+      <div class="grid four-col">
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <span data-i18n="fuel_pre_tag">Pre-Race &bull; Hotel & T-60m</span>
+          </div>
+          <h3 data-i18n="fuel_pre_title">Morning Priming</h3>
+          <ul class="fuel-list">
+            <li data-i18n="fuel_pre_1"><strong>Hotel (03:30 AM):</strong> Light oatmeal/toast, water, and 1x <em>Solid Fuel 160</em>.</li>
+            <li data-i18n="fuel_pre_2"><strong>Drive (04:15 AM):</strong> Sip 500ml <em>Drink Mix 160 / 320</em> slowly in car.</li>
+            <li data-i18n="fuel_pre_3"><strong>Canal (06:15 AM):</strong> 1x <em>Gel 100 / Gel 100 Caf 100</em> with water 15 mins before start.</li>
+          </ul>
+          <div class="fuel-badge" data-i18n="fuel_pre_badge">Total: ~105g Carbs</div>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>
+            <span data-i18n="fuel_bike_tag">Bike &bull; ~5h 48m</span>
+          </div>
+          <h3 data-i18n="fuel_bike_title">80–90g Carbs / Hr</h3>
+          <ul class="fuel-list">
+            <li data-i18n="fuel_bike_1"><strong>Bottles:</strong> 2x 750ml bottles with <em>Drink Mix 320</em> (80g carbs each).</li>
+            <li data-i18n="fuel_bike_2"><strong>Special Needs:</strong> Restock 1x <em>Drink Mix 320</em> at 90 km turnaround.</li>
+            <li data-i18n="fuel_bike_3"><strong>Gels:</strong> 1x <em>Gel 100</em> every 45 mins. Use <em>Gel 100 Caf 100</em> before Kalvarienberg & Solar Hill.</li>
+            <li data-i18n="fuel_bike_4"><strong>Water:</strong> Plain water bottle on BTA mount to rinse palate.</li>
+          </ul>
+          <div class="fuel-badge" data-i18n="fuel_bike_badge">Bike Total: ~480g Carbs</div>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 4v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
+            <span data-i18n="fuel_run_tag">Run &bull; ~4h 34m</span>
+          </div>
+          <h3 data-i18n="fuel_run_title">60–75g Carbs / Hr</h3>
+          <ul class="fuel-list">
+            <li data-i18n="fuel_run_1"><strong>Gel Schedule:</strong> 1x <em>Gel 100</em> every 25–30 mins (~5 km).</li>
+            <li data-i18n="fuel_run_2"><strong>Caffeine Dosing:</strong> <em>Gel 100 Caf 100</em> at km 15, km 25, and km 35 (Büchenbach climb).</li>
+            <li data-i18n="fuel_run_3"><strong>Aid Stations:</strong> Walk aid stations, sip 150ml pure water with every gel.</li>
+          </ul>
+          <div class="fuel-badge" data-i18n="fuel_run_badge">Run Total: ~280g Carbs</div>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span data-i18n="fuel_post_tag">Post-Race Finish</span>
+          </div>
+          <h3 data-i18n="fuel_post_title">Recovery Window</h3>
+          <ul class="fuel-list">
+            <li data-i18n="fuel_post_1"><strong>Immediate (0–30m):</strong> Maurten Drink Mix 160 or recovery electrolyte blend.</li>
+            <li data-i18n="fuel_post_2"><strong>Hydration:</strong> 500–750ml water per hour with sodium replenishment.</li>
+            <li data-i18n="fuel_post_3"><strong>Meal (1–2h):</strong> Balanced post-race meal in athlete garden.</li>
+          </ul>
+          <div class="fuel-badge" data-i18n="fuel_post_badge">Replenish & Recover</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Specifications -->
+  <section class="section border-bottom" id="profiles">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-heading">
+          <svg class="icon-section" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+          <h2 data-i18n="sec_course_title">Course Breakdown</h2>
+        </div>
+        <p data-i18n="sec_course_sub">Discipline specifications and key coordinates</p>
+      </div>
+
+      <div class="grid three-col">
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20"/><path d="M20 12c-2.5 0-3.5-3-6-3s-3.5 3-6 3-3.5-3-6-3"/></svg>
+            <span data-i18n="course_leg1_tag">Leg 1</span>
+          </div>
+          <h3 data-i18n="course_leg1_title">Main-Danube Canal</h3>
+          <ul class="data-list">
+            <li><span data-i18n="lbl_dist">Distance</span><strong>3.8 km</strong></li>
+            <li><span data-i18n="lbl_elev">Elevation</span><strong>0 m</strong></li>
+            <li><span data-i18n="lbl_water">Water</span><strong data-i18n="course_leg1_water">~21°C–23°C (Fresh)</strong></li>
+          </ul>
+          <p class="card-desc" data-i18n="course_leg1_desc">Point-to-point course. Closed to commercial ship traffic with spectator bridge vantage points.</p>
+          <a href="https://maps.google.com/?q=49.1983,11.1833" target="_blank" rel="noopener" class="map-link">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="map_swim_start">Google Maps: Swim Start &rarr;</span>
+          </a>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>
+            <span data-i18n="course_leg2_tag">Leg 2</span>
+          </div>
+          <h3 data-i18n="course_leg2_title">Franconian 2-Lap Loop</h3>
+          <ul class="data-list">
+            <li><span data-i18n="lbl_dist">Distance</span><strong>180 km</strong></li>
+            <li><span data-i18n="lbl_elev">Elevation</span><strong>~1,200 m D+</strong></li>
+            <li><span data-i18n="lbl_keypoints">Key Points</span><strong data-i18n="course_leg2_keypoints">Solarer Berg & Greding</strong></li>
+          </ul>
+          <p class="card-desc" data-i18n="course_leg2_desc">High-speed rolling terrain. Smooth road surface with protected turns and long aero stretches.</p>
+          <a href="https://maps.google.com/?q=Solarer+Berg+Hilpoltstein" target="_blank" rel="noopener" class="map-link">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="map_solar_berg">Google Maps: Solarer Berg &rarr;</span>
+          </a>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 4v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
+            <span data-i18n="course_leg3_tag">Leg 3</span>
+          </div>
+          <h3 data-i18n="course_leg3_title">Canal Trail & Stadium</h3>
+          <ul class="data-list">
+            <li><span data-i18n="lbl_dist">Distance</span><strong>42.2 km</strong></li>
+            <li><span data-i18n="lbl_elev">Elevation</span><strong>~160 m D+</strong></li>
+            <li><span data-i18n="lbl_finish">Finish</span><strong data-i18n="course_leg3_finish">Roth Triathlon Stadium</strong></li>
+          </ul>
+          <p class="card-desc" data-i18n="course_leg3_desc">Flat towpath surface leading into the Büchenbach incline, finishing inside the 10,000-seat arena.</p>
+          <a href="https://maps.google.com/?q=Triathlonpark+Roth" target="_blank" rel="noopener" class="map-link">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="map_stadium_finish">Google Maps: Roth Stadium &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule / Timeline with Embedded Driving Directions -->
+  <section class="section border-bottom" id="schedule">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-heading">
+          <svg class="icon-section" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <h2 data-i18n="sec_sched_title">Race Week Schedule & Navigation</h2>
+        </div>
+        <p data-i18n="sec_sched_sub">Daily timeline with direct Google Maps driving navigation from Nuremberg</p>
+      </div>
+
+      <!-- Segmented Control Filter -->
+      <div class="segmented-control">
+        <button class="seg-btn active" data-day="all" data-i18n="tab_all">All Days</button>
+        <button class="seg-btn" data-day="thu" data-i18n="tab_thu">Thu, 1 Jul</button>
+        <button class="seg-btn" data-day="fri" data-i18n="tab_fri">Fri, 2 Jul</button>
+        <button class="seg-btn" data-day="sat" data-i18n="tab_sat">Sat, 3 Jul</button>
+        <button class="seg-btn" data-day="sun" data-i18n="tab_sun">Sun, 4 Jul (Race)</button>
+        <button class="seg-btn" data-day="mon" data-i18n="tab_mon">Mon, 5 Jul</button>
+      </div>
+
+      <div class="timeline">
+
+        <!-- Thursday -->
+        <div class="timeline-group" data-day="thu">
+          <div class="group-label">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span data-i18n="day_thu_label">Thursday, 1 July 2027 &bull; Nuremberg Arrival & Expo</span>
+          </div>
+
+          <div class="timeline-row">
+            <div class="time-badge">10:00 AM</div>
+            <div class="timeline-content">
+              <span class="type-pill" data-i18n="pill_reg">Registration</span>
+              <h4 data-i18n="thu_event1_title">Athlete Check-In & Race Expo</h4>
+              <p data-i18n="thu_event1_desc">Pick up bib pack, timing chip, and transition bags at Roth Triathlon Park. Drive via B2 South (~30 km / 28 mins).</p>
+              <a href="https://maps.google.com/?daddr=Triathlonpark+Roth&saddr=Nuremberg+Germany" target="_blank" rel="noopener" class="map-link">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 10.7 2 10.8 2 11v5c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+                <span data-i18n="thu_event1_map">Google Maps Route: Nürnberg &rarr; Roth Expo &rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="timeline-row">
+            <div class="time-badge">03:30 PM</div>
+            <div class="timeline-content">
+              <span class="type-pill" data-i18n="pill_taper">Taper</span>
+              <h4 data-i18n="thu_event2_title">Bike Assembly & Shakeout Spin</h4>
+              <p data-i18n="thu_event2_desc">Reassemble bike, check gears/brakes, 20-min light cadence ride with 3x30s pickups along Nuremberg Pegnitz meadows, and 10-min easy jog.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Friday -->
+        <div class="timeline-group" data-day="fri">
+          <div class="group-label">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span data-i18n="day_fri_label">Friday, 2 July 2027 &bull; Practice Swim & Route Recon</span>
+          </div>
+
+          <div class="timeline-row">
+            <div class="time-badge">07:00 AM</div>
+            <div class="timeline-content">
+              <span class="type-pill" data-i18n="pill_swim_recon">Swim Recon</span>
+              <h4 data-i18n="fri_event1_title">Official Canal Practice Swim</h4>
+              <p data-i18n="fri_event1_desc">Drive A9 South from Nuremberg to Heuberg (~36 km / 30 mins). Practice sighting and rhythm in the Main-Danube Canal at target 2:10/100m pace.</p>
+              <a href="https://maps.google.com/?daddr=49.1983,11.1833&saddr=Nuremberg+Germany" target="_blank" rel="noopener" class="map-link">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 10.7 2 10.8 2 11v5c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+                <span data-i18n="fri_event1_map">Google Maps Route: Nürnberg &rarr; Heuberg Swim Start &rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="timeline-row">
+            <div class="time-badge">11:00 AM</div>
+            <div class="timeline-content">
+              <span class="type-pill" data-i18n="pill_course_recon">Course Recon</span>
+              <h4 data-i18n="fri_event2_title">Drive Solarer Berg & Kalvarienberg (Greding)</h4>
+              <p data-i18n="fri_event2_desc">Vehicle reconnaissance of key climb segments to establish gear choices and pacing boundaries.</p>
+              <a href="https://maps.google.com/?daddr=Solarer+Berg+Hilpoltstein&saddr=Nuremberg+Germany" target="_blank" rel="noopener" class="map-link">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 10.7 2 10.8 2 11v5c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+                <span data-i18n="fri_event2_map">Google Maps Route: Nürnberg &rarr; Solarer Berg Recon &rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Saturday -->
+        <div class="timeline-group" data-day="sat">
+          <div class="group-label">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span data-i18n="day_sat_label">Saturday, 3 July 2027 &bull; Bike Check-In & Prep</span>
+          </div>
+
+          <div class="timeline-row">
+            <div class="time-badge">01:30 PM</div>
+            <div class="timeline-content">
+              <span class="type-pill" data-i18n="pill_trans">Transition</span>
+              <h4 data-i18n="sat_event1_title">T1 Bike Check-In & Blue Bag Drop</h4>
+              <p data-i18n="sat_event1_desc">Drive to T1 (Heuberg canal). Rack bike and hang blue transition bag with helmet, shoes, and initial Maurten nutrition. Check tire pressure.</p>
+              <a href="https://maps.google.com/?daddr=49.1983,11.1833&saddr=Nuremberg+Germany" target="_blank" rel="noopener" class="map-link">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 10.7 2 10.8 2 11v5c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+                <span data-i18n="sat_event1_map">Google Maps Route: Nürnberg &rarr; T1 Transition (Heuberg) &rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="timeline-row">
+            <div class="time-badge">05:30 PM</div>
+            <div class="timeline-content">
+              <span class="type-pill" data-i18n="pill_nutr">Nutrition</span>
+              <h4 data-i18n="sat_event2_title">Hotel Carb Dinner & Pack Car</h4>
+              <p data-i18n="sat_event2_desc">Early light meal in Nuremberg. Fill race morning bottles (Maurten 320), pack morning bag, and set dual alarms for 03:15 AM.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sunday -->
+        <div class="timeline-group" data-day="sun">
+          <div class="group-label group-label-race">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span data-i18n="day_sun_label">Sunday, 4 July 2027 &bull; RACE DAY</span>
+          </div>
+
+          <div class="timeline-row row-race">
+            <div class="time-badge badge-race">04:00 AM</div>
+            <div class="timeline-content">
+              <span class="type-pill pill-race" data-i18n="pill_drive">Race Morning Drive</span>
+              <h4 data-i18n="sun_event1_title">Drive Nuremberg &rarr; Heuberg Swim Start (A9 South)</h4>
+              <p data-i18n="sun_event1_desc">Depart Nuremberg hotel via A73 / A9 South directly to Exit 56 (Hilpoltstein). <em>Note: Leave by 04:15 AM latest before Exit 56 backs up. Do not drive through Roth town center due to closed roads.</em></p>
+              <a href="https://maps.google.com/?daddr=49.1983,11.1833&saddr=Nuremberg+Germany" target="_blank" rel="noopener" class="map-link">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 10.7 2 10.8 2 11v5c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+                <span data-i18n="sun_event1_map">Live GPS Driving Navigation: Nürnberg &rarr; T1 Heuberg &rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="timeline-row row-race">
+            <div class="time-badge badge-race">04:45 AM</div>
+            <div class="timeline-content">
+              <span class="type-pill pill-race" data-i18n="pill_t1">T1 Setup</span>
+              <h4 data-i18n="sun_event2_title">Transition Zone Opens</h4>
+              <p data-i18n="sun_event2_desc">Mount Maurten bottles on bike, verify tire pressure (~90 psi), drop special needs, and put on wetsuit by 06:00 AM.</p>
+            </div>
+          </div>
+
+          <div class="timeline-row row-race">
+            <div class="time-badge badge-race">06:30 AM</div>
+            <div class="timeline-content">
+              <span class="type-pill pill-race" data-i18n="pill_start">Start</span>
+              <h4 data-i18n="sun_event3_title">Cannon Blast & Wave Starts</h4>
+              <p data-i18n="sun_event3_desc">Start of the 3.8 km canal swim. Execute controlled 2:10/100m pacing.</p>
+            </div>
+          </div>
+
+          <div class="timeline-row row-race">
+            <div class="time-badge badge-race">06:30 PM</div>
+            <div class="timeline-content">
+              <span class="type-pill pill-race" data-i18n="pill_finish">Finish</span>
+              <h4 data-i18n="sun_event4_title">Sub-12h Stadium Finish</h4>
+              <p data-i18n="sun_event4_desc">Cross the red carpet inside the 10,000-seat Roth finish stadium before nightfall.</p>
+              <a href="https://maps.google.com/?daddr=Triathlonpark+Roth&saddr=Nuremberg+Germany" target="_blank" rel="noopener" class="map-link">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span data-i18n="sun_event4_map">Google Maps: Roth Stadium Finish &rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="timeline-row row-race">
+            <div class="time-badge badge-race">10:30 PM</div>
+            <div class="timeline-content">
+              <span class="type-pill pill-race" data-i18n="pill_celeb">Celebration</span>
+              <h4 data-i18n="sun_event5_title">Finish-Line Party & Fireworks</h4>
+              <p data-i18n="sun_event5_desc">Traditional Roth firework show honoring all sub-17h finishers.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Monday -->
+        <div class="timeline-group" data-day="mon">
+          <div class="group-label">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span data-i18n="day_mon_label">Monday, 5 July 2027 &bull; Awards & Return to Nuremberg</span>
+          </div>
+
+          <div class="timeline-row">
+            <div class="time-badge">10:00 AM</div>
+            <div class="timeline-content">
+              <span class="type-pill" data-i18n="pill_awards">Awards</span>
+              <h4 data-i18n="mon_event1_title">Awards Brunch & Certificate Collection</h4>
+              <p data-i18n="mon_event1_desc">Medal engraving, finisher certificates, and volunteer appreciation at the festival tent in Roth before driving back to Nuremberg.</p>
+              <a href="https://maps.google.com/?daddr=Triathlonpark+Roth&saddr=Nuremberg+Germany" target="_blank" rel="noopener" class="map-link">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 10.7 2 10.8 2 11v5c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+                <span data-i18n="mon_event1_map">Google Maps Route: Nürnberg &rarr; Roth Festival Tent &rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tactical Execution -->
+  <section class="section border-bottom" id="tactics">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-heading">
+          <svg class="icon-section" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          <h2 data-i18n="sec_tactics_title">Tactical Execution</h2>
+        </div>
+        <p data-i18n="sec_tactics_sub">Discipline pacing and segment rules</p>
+      </div>
+
+      <div class="grid two-col">
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>
+            <span data-i18n="tactics_bike_tag">Cycling Strategy</span>
+          </div>
+          <h3 data-i18n="tactics_bike_title">Bike: 31 km/h Target (~5h 48m)</h3>
+          <ul class="tactics-list">
+            <li data-i18n="tactics_bike_1"><strong>Solarer Berg:</strong> Maintain high cadence (85+ RPM) in an easy gear. Avoid surging on crowd excitement.</li>
+            <li data-i18n="tactics_bike_2"><strong>Kalvarienberg (Greding):</strong> Cap power below functional threshold to preserve running legs.</li>
+            <li data-i18n="tactics_bike_3"><strong>Aero Positioning:</strong> Stay locked in aero on flat sectors to sustain the 31 km/h speed target.</li>
+            <li data-i18n="tactics_bike_4"><strong>Nutrition Timing:</strong> Sip <em>Drink Mix 320</em> every 15–20 minutes to keep gastric emptying optimal.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 4v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
+            <span data-i18n="tactics_run_tag">Running Strategy</span>
+          </div>
+          <h3 data-i18n="tactics_run_title">Run: 6:30/km Target (~4h 34m)</h3>
+          <ul class="tactics-list">
+            <li data-i18n="tactics_run_1"><strong>Canal Towpath:</strong> Hold an exact 6:25–6:30/km pace along the flat first 25 km.</li>
+            <li data-i18n="tactics_run_2"><strong>Aid Stations:</strong> Walk 20–30 seconds at each station for complete fluid and electrolyte intake.</li>
+            <li data-i18n="tactics_run_3"><strong>Büchenbach:</strong> Manage effort on the 35km incline before the descent into the stadium.</li>
+            <li data-i18n="tactics_run_4"><strong>Maurten Routine:</strong> Take 1x <em>Gel 100</em> with plain water; avoid mixing on-course sports drink.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Packing & Race Checklist -->
+  <section class="section" id="checklist">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-heading">
+          <svg class="icon-section" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <h2 data-i18n="sec_check_title">Complete Packing & Transition Checklist</h2>
+        </div>
+        <p data-i18n="sec_check_sub">Comprehensive checklist covering travel luggage, bike box, transition bags, and race morning kit</p>
+      </div>
+
+      <div class="grid four-col">
+        <!-- Travel & Luggage Packing -->
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span data-i18n="chk_travel_tag">Travel & Flight Luggage</span>
+          </div>
+          <h3 data-i18n="chk_travel_title">Travel Packing</h3>
+          <ul class="checklist">
+            <li><input type="checkbox" id="p1" checked><label for="p1" data-i18n="chk_p1">Passport & flight boarding passes</label></li>
+            <li><input type="checkbox" id="p2" checked><label for="p2" data-i18n="chk_p2">Race registration QR & triathlon license</label></li>
+            <li><input type="checkbox" id="p3" checked><label for="p3" data-i18n="chk_p3">Bike box / bag + tools & torque wrench</label></li>
+            <li><input type="checkbox" id="p4"><label for="p4" data-i18n="chk_p4">EU power adapter + power bank</label></li>
+            <li><input type="checkbox" id="p5"><label for="p5" data-i18n="chk_p5">Casual clothes & warm layers for evening</label></li>
+            <li><input type="checkbox" id="p6"><label for="p6" data-i18n="chk_p6">Prescription meds & basic travel first aid</label></li>
+          </ul>
+        </div>
+
+        <!-- T1 Blue Bag -->
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>
+            <span data-i18n="chk_t1_tag">T1 &bull; Blue Bag</span>
+          </div>
+          <h3 data-i18n="chk_t1_title">Bike Gear & Fuel</h3>
+          <ul class="checklist">
+            <li><input type="checkbox" id="g1" checked><label for="g1" data-i18n="chk_g1">Aero helmet & visor</label></li>
+            <li><input type="checkbox" id="g2" checked><label for="g2" data-i18n="chk_g2">Cycling shoes & socks</label></li>
+            <li><input type="checkbox" id="g3" checked><label for="g3" data-i18n="chk_g3">Race bib belt + sunglasses</label></li>
+            <li><input type="checkbox" id="g4"><label for="g4" data-i18n="chk_g4">4x Maurten Gel 100 / Gel 100 Caf</label></li>
+            <li><input type="checkbox" id="g5"><label for="g5" data-i18n="chk_g5">2x 750ml bottles (Drink Mix 320)</label></li>
+          </ul>
+        </div>
+
+        <!-- T2 Red Bag -->
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 4v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
+            <span data-i18n="chk_t2_tag">T2 &bull; Red Bag</span>
+          </div>
+          <h3 data-i18n="chk_t2_title">Run Gear & Fuel</h3>
+          <ul class="checklist">
+            <li><input type="checkbox" id="g6" checked><label for="g6" data-i18n="chk_g6">Run shoes + elastic laces</label></li>
+            <li><input type="checkbox" id="g7" checked><label for="g7" data-i18n="chk_g7">Running cap / visor</label></li>
+            <li><input type="checkbox" id="g8"><label for="g8" data-i18n="chk_g8">Anti-chafe stick & blister pads</label></li>
+            <li><input type="checkbox" id="g9"><label for="g9" data-i18n="chk_g9">7x Maurten Gel 100 (incl. 3x Caf 100)</label></li>
+            <li><input type="checkbox" id="g10"><label for="g10" data-i18n="chk_g10">Electrolyte & salt tablets</label></li>
+          </ul>
+        </div>
+
+        <!-- Car & Morning Kit -->
+        <div class="card">
+          <div class="card-tag">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span data-i18n="chk_am_tag">Race Morning Kit</span>
+          </div>
+          <h3 data-i18n="chk_am_title">Morning & Car Pack</h3>
+          <ul class="checklist">
+            <li><input type="checkbox" id="g11" checked><label for="g11" data-i18n="chk_g11">Car keys & parking pass printed</label></li>
+            <li><input type="checkbox" id="g12" checked><label for="g12" data-i18n="chk_g12">Timing chip on left ankle</label></li>
+            <li><input type="checkbox" id="g13"><label for="g13" data-i18n="chk_g13">Wetsuit + tinted goggles</label></li>
+            <li><input type="checkbox" id="g14"><label for="g14" data-i18n="chk_g14">Floor pump (tires ~90 psi in T1)</label></li>
+            <li><input type="checkbox" id="g15"><label for="g15" data-i18n="chk_g15">1x Maurten Drink Mix 160 (sipped)</label></li>
+            <li><input type="checkbox" id="g16"><label for="g16" data-i18n="chk_g16">1x Maurten Gel 100 (15m before start)</label></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <span data-i18n="footer_copy">&copy; 2027 Team DNF Challenge Roth Campaign &bull; Sub-12 Target Strategy</span>
+      <a href="#top" class="top-link">
+        <span data-i18n="footer_top">Back to top</span>
+        <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Floating Mobile Return To Top Button -->
+  <button id="backToTopBtn" class="floating-top-btn" aria-label="Return to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+    <span class="btn-text">TOP</span>
+  </button>
+
+  <!-- Bilingual Dictionary & Interactive Engine -->
+  <script>
+    const translations = {
+      en: {
+        nav_stats: "Overview",
+        nav_targets: "Targets",
+        nav_fuel: "Fuel Plan",
+        nav_course: "Course",
+        nav_schedule: "Itinerary",
+        nav_checklist: "Checklist",
+        hero_pill: "Sunday, 4 July 2027 • Roth & Nuremberg, Germany",
+        hero_title: "Team DNF Challenge Roth 2027",
+        hero_subtitle: "Sub-12 pacing matrix, 2026 race benchmarks, Maurten hydrogel fueling protocol, turn-by-turn itinerary driving routes, and complete packing checklist.",
+        cd_days: "Days",
+        cd_hours: "Hours",
+        cd_mins: "Mins",
+        cd_secs: "Secs",
+        sec_stats_title: "Race Overview & 2026 Statistics",
+        sec_stats_sub: "Key benchmarks and participation metrics from the 2026 edition",
+        stat_1_tag: "Avg Finish Time",
+        stat_1_sub: "Overall Average (2026)",
+        stat_1_desc: "Men's Avg: <strong>11h 19m</strong> • Women's Avg: <strong>12h 08m</strong> across 3,500+ individual finishers.",
+        stat_2_tag: "Athletes on Course",
+        stat_2_sub: "85+ Nations Represented",
+        stat_2_desc: "~3,500 individual starters plus 650 relay teams (2,000 relay athletes) on the Bavarian course.",
+        stat_3_tag: "Volunteer Force",
+        stat_3_sub: "Community Support",
+        stat_3_desc: "The legendary backbone of Roth, staffing transitions, canal rescue, and aid stations every 2 km.",
+        stat_4_tag: "Spectators Along Course",
+        stat_4_sub: "Electric Atmosphere",
+        stat_4_desc: "Over 40,000 lining Solarer Berg alone, creating the iconic Tour de France-style human tunnel.",
+        sec_targets_title: "Target Splits",
+        sec_targets_sub: "Sub-12h pacing matrix",
+        tgt_swim_tag: "Swim • 3.8 km",
+        tgt_swim_pace: "2:10 / 100m",
+        tgt_swim_desc: "Main-Danube Canal. Calm fresh water, single turnaround buoy, zero current.",
+        tgt_bike_tag: "Bike • 180 km",
+        tgt_bike_pace: "31.0 km/h avg",
+        tgt_bike_desc: "2-lap loop (~1,200m elev). Sustained aero on flats, metered power on climbs.",
+        tgt_run_tag: "Run • 42.2 km",
+        tgt_run_pace: "6:30 / km",
+        tgt_run_desc: "Canal gravel towpath + town loops. Walk aid stations to fuel and cool down.",
+        tgt_sub12_tag: "Sub-12 Target",
+        tgt_sub12_trans: "~12m Transitions",
+        tgt_sub12_desc: "Combined T1/T2 buffer with consistent hydration and carb intake.",
+        sec_fuel_title: "Maurten Fueling Protocol",
+        sec_fuel_sub: "Hourly carbohydrate & electrolyte strategy targeting 80–90g carbs/hr on bike and 60–75g carbs/hr on run",
+        fuel_pre_tag: "Pre-Race • Hotel & T-60m",
+        fuel_pre_title: "Morning Priming",
+        fuel_pre_1: "<strong>Hotel (03:30 AM):</strong> Light oatmeal/toast, water, and 1x <em>Solid Fuel 160</em>.",
+        fuel_pre_2: "<strong>Drive (04:15 AM):</strong> Sip 500ml <em>Drink Mix 160 / 320</em> slowly in car.",
+        fuel_pre_3: "<strong>Canal (06:15 AM):</strong> 1x <em>Gel 100 / Gel 100 Caf 100</em> with water 15 mins before start.",
+        fuel_pre_badge: "Total: ~105g Carbs",
+        fuel_bike_tag: "Bike • ~5h 48m",
+        fuel_bike_title: "80–90g Carbs / Hr",
+        fuel_bike_1: "<strong>Bottles:</strong> 2x 750ml bottles with <em>Drink Mix 320</em> (80g carbs each).",
+        fuel_bike_2: "<strong>Special Needs:</strong> Restock 1x <em>Drink Mix 320</em> at 90 km turnaround.",
+        fuel_bike_3: "<strong>Gels:</strong> 1x <em>Gel 100</em> every 45 mins. Use <em>Gel 100 Caf 100</em> before Kalvarienberg & Solar Hill.",
+        fuel_bike_4: "<strong>Water:</strong> Plain water bottle on BTA mount to rinse palate.",
+        fuel_bike_badge: "Bike Total: ~480g Carbs",
+        fuel_run_tag: "Run • ~4h 34m",
+        fuel_run_title: "60–75g Carbs / Hr",
+        fuel_run_1: "<strong>Gel Schedule:</strong> 1x <em>Gel 100</em> every 25–30 mins (~5 km).",
+        fuel_run_2: "<strong>Caffeine Dosing:</strong> <em>Gel 100 Caf 100</em> at km 15, km 25, and km 35 (Büchenbach climb).",
+        fuel_run_3: "<strong>Aid Stations:</strong> Walk aid stations, sip 150ml pure water with every gel.",
+        fuel_run_badge: "Run Total: ~280g Carbs",
+        fuel_post_tag: "Post-Race Finish",
+        fuel_post_title: "Recovery Window",
+        fuel_post_1: "<strong>Immediate (0–30m):</strong> Maurten Drink Mix 160 or recovery electrolyte blend.",
+        fuel_post_2: "<strong>Hydration:</strong> 500–750ml water per hour with sodium replenishment.",
+        fuel_post_3: "<strong>Meal (1–2h):</strong> Balanced post-race meal in athlete garden.",
+        fuel_post_badge: "Replenish & Recover",
+        sec_course_title: "Course Breakdown",
+        sec_course_sub: "Discipline specifications and key coordinates",
+        course_leg1_tag: "Leg 1",
+        course_leg1_title: "Main-Danube Canal",
+        lbl_dist: "Distance",
+        lbl_elev: "Elevation",
+        lbl_water: "Water",
+        course_leg1_water: "~21°C–23°C (Fresh)",
+        course_leg1_desc: "Point-to-point course. Closed to commercial ship traffic with spectator bridge vantage points.",
+        map_swim_start: "Google Maps: Swim Start →",
+        course_leg2_tag: "Leg 2",
+        course_leg2_title: "Franconian 2-Lap Loop",
+        lbl_keypoints: "Key Points",
+        course_leg2_keypoints: "Solarer Berg & Greding",
+        course_leg2_desc: "High-speed rolling terrain. Smooth road surface with protected turns and long aero stretches.",
+        map_solar_berg: "Google Maps: Solarer Berg →",
+        course_leg3_tag: "Leg 3",
+        course_leg3_title: "Canal Trail & Stadium",
+        lbl_finish: "Finish",
+        course_leg3_finish: "Roth Triathlon Stadium",
+        course_leg3_desc: "Flat towpath surface leading into the Büchenbach incline, finishing inside the 10,000-seat arena.",
+        map_stadium_finish: "Google Maps: Roth Stadium →",
+        sec_sched_title: "Race Week Schedule & Navigation",
+        sec_sched_sub: "Daily timeline with direct Google Maps driving navigation from Nuremberg",
+        tab_all: "All Days",
+        tab_thu: "Thu, 1 Jul",
+        tab_fri: "Fri, 2 Jul",
+        tab_sat: "Sat, 3 Jul",
+        tab_sun: "Sun, 4 Jul (Race)",
+        tab_mon: "Mon, 5 Jul",
+        day_thu_label: "Thursday, 1 July 2027 • Nuremberg Arrival & Expo",
+        pill_reg: "Registration",
+        thu_event1_title: "Athlete Check-In & Race Expo",
+        thu_event1_desc: "Pick up bib pack, timing chip, and transition bags at Roth Triathlon Park. Drive via B2 South (~30 km / 28 mins).",
+        thu_event1_map: "Google Maps Route: Nürnberg → Roth Expo →",
+        pill_taper: "Taper",
+        thu_event2_title: "Bike Assembly & Shakeout Spin",
+        thu_event2_desc: "Reassemble bike, check gears/brakes, 20-min light cadence ride with 3x30s pickups along Nuremberg Pegnitz meadows, and 10-min easy jog.",
+        day_fri_label: "Friday, 2 July 2027 • Practice Swim & Route Recon",
+        pill_swim_recon: "Swim Recon",
+        fri_event1_title: "Official Canal Practice Swim",
+        fri_event1_desc: "Drive A9 South from Nuremberg to Heuberg (~36 km / 30 mins). Practice sighting and rhythm in the Main-Danube Canal at target 2:10/100m pace.",
+        fri_event1_map: "Google Maps Route: Nürnberg → Heuberg Swim Start →",
+        pill_course_recon: "Course Recon",
+        fri_event2_title: "Drive Solarer Berg & Kalvarienberg (Greding)",
+        fri_event2_desc: "Vehicle reconnaissance of key climb segments to establish gear choices and pacing boundaries.",
+        fri_event2_map: "Google Maps Route: Nürnberg → Solarer Berg Recon →",
+        day_sat_label: "Saturday, 3 July 2027 • Bike Check-In & Prep",
+        pill_trans: "Transition",
+        sat_event1_title: "T1 Bike Check-In & Blue Bag Drop",
+        sat_event1_desc: "Drive to T1 (Heuberg canal). Rack bike and hang blue transition bag with helmet, shoes, and initial Maurten nutrition. Check tire pressure.",
+        sat_event1_map: "Google Maps Route: Nürnberg → T1 Transition (Heuberg) →",
+        pill_nutr: "Nutrition",
+        sat_event2_title: "Hotel Carb Dinner & Pack Car",
+        sat_event2_desc: "Early light meal in Nuremberg. Fill race morning bottles (Maurten 320), pack morning bag, and set dual alarms for 03:15 AM.",
+        day_sun_label: "Sunday, 4 July 2027 • RACE DAY",
+        pill_drive: "Race Morning Drive",
+        sun_event1_title: "Drive Nuremberg → Heuberg Swim Start (A9 South)",
+        sun_event1_desc: "Depart Nuremberg hotel via A73 / A9 South directly to Exit 56 (Hilpoltstein). Note: Leave by 04:15 AM latest before Exit 56 backs up. Do not drive through Roth town center due to closed roads.",
+        sun_event1_map: "Live GPS Driving Navigation: Nürnberg → T1 Heuberg →",
+        pill_t1: "T1 Setup",
+        sun_event2_title: "Transition Zone Opens",
+        sun_event2_desc: "Mount Maurten bottles on bike, verify tire pressure (~90 psi), drop special needs, and put on wetsuit by 06:00 AM.",
+        pill_start: "Start",
+        sun_event3_title: "Cannon Blast & Wave Starts",
+        sun_event3_desc: "Start of the 3.8 km canal swim. Execute controlled 2:10/100m pacing.",
+        pill_finish: "Finish",
+        sun_event4_title: "Sub-12h Stadium Finish",
+        sun_event4_desc: "Cross the red carpet inside the 10,000-seat Roth finish stadium before nightfall.",
+        sun_event4_map: "Google Maps: Roth Stadium Finish →",
+        pill_celeb: "Celebration",
+        sun_event5_title: "Finish-Line Party & Fireworks",
+        sun_event5_desc: "Traditional Roth firework show honoring all sub-17h finishers.",
+        day_mon_label: "Monday, 5 July 2027 • Awards & Return to Nuremberg",
+        pill_awards: "Awards",
+        mon_event1_title: "Awards Brunch & Certificate Collection",
+        mon_event1_desc: "Medal engraving, finisher certificates, and volunteer appreciation at the festival tent in Roth before driving back to Nuremberg.",
+        mon_event1_map: "Google Maps Route: Nürnberg → Roth Festival Tent →",
+        sec_tactics_title: "Tactical Execution",
+        sec_tactics_sub: "Discipline pacing and segment rules",
+        tactics_bike_tag: "Cycling Strategy",
+        tactics_bike_title: "Bike: 31 km/h Target (~5h 48m)",
+        tactics_bike_1: "<strong>Solarer Berg:</strong> Maintain high cadence (85+ RPM) in an easy gear. Avoid surging on crowd excitement.",
+        tactics_bike_2: "<strong>Kalvarienberg (Greding):</strong> Cap power below functional threshold to preserve running legs.",
+        tactics_bike_3: "<strong>Aero Positioning:</strong> Stay locked in aero on flat sectors to sustain the 31 km/h speed target.",
+        tactics_bike_4: "<strong>Nutrition Timing:</strong> Sip <em>Drink Mix 320</em> every 15–20 minutes to keep gastric emptying optimal.",
+        tactics_run_tag: "Running Strategy",
+        tactics_run_title: "Run: 6:30/km Target (~4h 34m)",
+        tactics_run_1: "<strong>Canal Towpath:</strong> Hold an exact 6:25–6:30/km pace along the flat first 25 km.",
+        tactics_run_2: "<strong>Aid Stations:</strong> Walk 20–30 seconds at each station for complete fluid and electrolyte intake.",
+        tactics_run_3: "<strong>Büchenbach:</strong> Manage effort on the 35km incline before the descent into the stadium.",
+        tactics_run_4: "<strong>Maurten Routine:</strong> Take 1x <em>Gel 100</em> with plain water; avoid mixing on-course sports drink.",
+        sec_check_title: "Complete Packing & Transition Checklist",
+        sec_check_sub: "Comprehensive checklist covering travel luggage, bike box, transition bags, and race morning kit",
+        chk_travel_tag: "Travel & Flight Luggage",
+        chk_travel_title: "Travel Packing",
+        chk_p1: "Passport & flight boarding passes",
+        chk_p2: "Race registration QR & triathlon license",
+        chk_p3: "Bike box / bag + tools & torque wrench",
+        chk_p4: "EU power adapter + power bank",
+        chk_p5: "Casual clothes & warm layers for evening",
+        chk_p6: "Prescription meds & basic travel first aid",
+        chk_t1_tag: "T1 • Blue Bag",
+        chk_t1_title: "Bike Gear & Fuel",
+        chk_g1: "Aero helmet & visor",
+        chk_g2: "Cycling shoes & socks",
+        chk_g3: "Race bib belt + sunglasses",
+        chk_g4: "4x Maurten Gel 100 / Gel 100 Caf",
+        chk_g5: "2x 750ml bottles (Drink Mix 320)",
+        chk_t2_tag: "T2 • Red Bag",
+        chk_t2_title: "Run Gear & Fuel",
+        chk_g6: "Run shoes + elastic laces",
+        chk_g7: "Running cap / visor",
+        chk_g8: "Anti-chafe stick & blister pads",
+        chk_g9: "7x Maurten Gel 100 (incl. 3x Caf 100)",
+        chk_g10: "Electrolyte & salt tablets",
+        chk_am_tag: "Race Morning Kit",
+        chk_am_title: "Morning & Car Pack",
+        chk_g11: "Car keys & parking pass printed",
+        chk_g12: "Timing chip on left ankle",
+        chk_g13: "Wetsuit + tinted goggles",
+        chk_g14: "Floor pump (tires ~90 psi in T1)",
+        chk_g15: "1x Maurten Drink Mix 160 (sipped)",
+        chk_g16: "1x Maurten Gel 100 (15m before start)",
+        footer_copy: "© 2027 Team DNF Challenge Roth Campaign • Sub-12 Target Strategy",
+        footer_top: "Back to top"
+      },
+      zh: {
+        nav_stats: "賽事總覽",
+        nav_targets: "完賽目標",
+        nav_fuel: "補給計畫",
+        nav_course: "賽道路線",
+        nav_schedule: "行程與自駕",
+        nav_checklist: "裝備清單",
+        hero_pill: "2027 年 7 月 4 日（週日）• 德國羅斯與紐倫堡",
+        hero_title: "Team DNF Challenge Roth 2027",
+        hero_subtitle: "Sub-12 配速矩陣、2026 歷屆數據、Maurten 水凝膠補給策略、自駕導航路線及全裝備清單。",
+        cd_days: "天",
+        cd_hours: "小時",
+        cd_mins: "分鐘",
+        cd_secs: "秒",
+        sec_stats_title: "賽事概覽與 2026 官方數據",
+        sec_stats_sub: "2026 年 Roth 賽事各項關鍵基準與參賽規模統計",
+        stat_1_tag: "平均完賽時間",
+        stat_1_sub: "2026 總平均時間",
+        stat_1_desc: "男子選手平均：<strong>11小時19分</strong> • 女子選手平均：<strong>12小時08分</strong>（3,500+ 個人完賽者）。",
+        stat_2_tag: "賽道參賽人數",
+        stat_2_sub: "全球 85+ 國家選手",
+        stat_2_desc: "約 3,500 位個人組選手與 650 支接力隊伍（2,000 位接力選手）馳騁巴伐利亞賽道。",
+        stat_3_tag: "志願者大軍",
+        stat_3_sub: "超強在地社群支援",
+        stat_3_desc: "Roth 的靈魂支柱，全面支援轉換區、運河救援及每 2 公里一處的補給站點。",
+        stat_4_tag: "賽道沿途觀眾",
+        stat_4_sub: "殿堂級賽事氛圍",
+        stat_4_desc: "單是 Solarer Berg（太陽山）即聚集逾 4 萬名熱情車迷，築起環法級的熱血人牆。",
+        sec_targets_title: "目標配速與分段時間",
+        sec_targets_sub: "Sub-12 小時完賽配速矩陣",
+        tgt_swim_tag: "游泳 • 3.8 公里",
+        tgt_swim_pace: "2:10 / 100m",
+        tgt_swim_desc: "美茵—多瑙運河。水面平靜、單一折返浮標、完全無水流干擾。",
+        tgt_bike_tag: "自行車 • 180 公里",
+        tgt_bike_pace: "均速 31.0 km/h",
+        tgt_bike_desc: "雙圈循環賽道（總爬升約 1,200m）。平路空力巡航，坡道嚴格控制輸出。",
+        tgt_run_tag: "路跑 • 42.2 公里",
+        tgt_run_pace: "6:30 / km",
+        tgt_run_desc: "運河碎石路徑與市鎮繞圈。嚴格執行補給站步行進食與降溫補水。",
+        tgt_sub12_tag: "Sub-12 目標",
+        tgt_sub12_trans: "~12分鐘 轉換緩衝",
+        tgt_sub12_desc: "包含 T1+T2 轉換與各補給站的補給時間預留。",
+        sec_fuel_title: "Maurten 水凝膠補給協議",
+        sec_fuel_sub: "每小時碳水與電解質攝取方案：騎車 80–90g/hr、跑步 60–75g/hr",
+        fuel_pre_tag: "賽前 • 飯店與倒數 60 分鐘",
+        fuel_pre_title: "賽晨啟動補給",
+        fuel_pre_1: "<strong>飯店（03:30 AM）：</strong> 清淡燕麥/吐司、溫水，搭配 1 條 <em>Solid Fuel 160</em> 能量棒。",
+        fuel_pre_2: "<strong>車程中（04:15 AM）：</strong> 在車上緩慢啜飲 500ml <em>Drink Mix 160 / 320</em>。",
+        fuel_pre_3: "<strong>運河下水前（06:15 AM）：</strong> 開賽前 15 分鐘配清水吞服 1 包 <em>Gel 100 / Gel 100 Caf 100</em>。",
+        fuel_pre_badge: "賽前總計：約 105g 碳水",
+        fuel_bike_tag: "自行車 • 約 5小時48分",
+        fuel_bike_title: "80–90g 碳水 / 小時",
+        fuel_bike_1: "<strong>水壺配方：</strong> 2 支 750ml 水壺沖泡 <em>Drink Mix 320</em>（每壺含 80g 碳水）。",
+        fuel_bike_2: "<strong>特殊補給：</strong> 在 90 公里折返補給站補充第 3 壺 <em>Drink Mix 320</em>。",
+        fuel_bike_3: "<strong>能量膠：</strong> 每 45 分鐘 1 包 <em>Gel 100</em>。在登頂 Kalvarienberg 與 Solarer Berg 前改用 <em>Gel 100 Caf 100</em> 咖啡因膠。",
+        fuel_bike_4: "<strong>純水：</strong> 休息把專用水壺裝純水，每吃膠後漱口保持清爽。",
+        fuel_bike_badge: "單車總計：約 480g 碳水",
+        fuel_run_tag: "路跑 • 約 4小時34分",
+        fuel_run_title: "60–75g 碳水 / 小時",
+        fuel_run_1: "<strong>吃膠節奏：</strong> 每 25–30 分鐘（約 5 公里）補充 1 包 <em>Gel 100</em>。",
+        fuel_run_2: "<strong>咖啡因策略：</strong> 分別於 15km、25km 及 35km（Büchenbach 坡前）補充 <em>Gel 100 Caf 100</em>。",
+        fuel_run_3: "<strong>進站原則：</strong> 經過水站一律快走 20–30 秒，並配 150ml 清水吞膠。",
+        fuel_run_badge: "路跑總計：約 280g 碳水",
+        fuel_post_tag: "賽後完賽",
+        fuel_post_title: "黃金恢復期",
+        fuel_post_1: "<strong>立即（0–30分）：</strong> 飲用 Maurten Drink Mix 160 或電解質恢復飲品。",
+        fuel_post_2: "<strong>水分補充：</strong> 每小時補水 500–750ml，並補充鈉鹽。",
+        fuel_post_3: "<strong>正餐（1–2小時）：</strong> 在選手花園享用均衡高碳高蛋白正餐。",
+        fuel_post_badge: "全面補充與修復",
+        sec_course_title: "各項賽道路線解析",
+        sec_course_sub: "賽段詳細數據與重要座標",
+        course_leg1_tag: "第一段",
+        course_leg1_title: "美茵—多瑙運河",
+        lbl_dist: "距離",
+        lbl_elev: "爬升",
+        lbl_water: "水質水溫",
+        course_leg1_water: "~21°C–23°C（淡水）",
+        course_leg1_desc: "點對點折返賽道。比賽期間全面禁航商船，兩岸橋樑為絕佳觀賽點。",
+        map_swim_start: "Google Maps：游泳起點導航 →",
+        course_leg2_tag: "第二段",
+        course_leg2_title: "法蘭克尼亞雙圈單車賽道",
+        lbl_keypoints: "重要地標",
+        course_leg2_keypoints: "Solarer Berg 太陽山 & Greding 坡",
+        course_leg2_desc: "高速起伏地形。路面平整順滑，包含長距離空力直線與經典爬坡。",
+        map_solar_berg: "Google Maps：Solarer Berg 太陽山 →",
+        course_leg3_tag: "第三段",
+        course_leg3_title: "運河步道與萬人體育場",
+        lbl_finish: "終點",
+        course_leg3_finish: "羅斯鐵人體育場（Triathlon Stadium）",
+        course_leg3_desc: "沿運河平緩碎石路前進，途經 Büchenbach 微坡，最終跑入萬人體育場。",
+        map_stadium_finish: "Google Maps：終點體育場導航 →",
+        sec_sched_title: "賽事週日程與自駕導航",
+        sec_sched_sub: "從紐倫堡出發的每日行事曆與 Google Maps 路線",
+        tab_all: "全部日程",
+        tab_thu: "7/1（週四）",
+        tab_fri: "7/2（週五）",
+        tab_sat: "7/3（週六）",
+        tab_sun: "7/4 正賽（週日）",
+        tab_mon: "7/5（週一）",
+        day_thu_label: "2027 年 7 月 1 日（週四）• 抵達紐倫堡與博覽會報到",
+        pill_reg: "報到登記",
+        thu_event1_title: "選手報到領物與博覽會",
+        thu_event1_desc: "前往 Roth Triathlon Park 領取號碼布、晶片及轉換袋。由紐倫堡走 B2 往南（約 30 公里 / 28 分鐘）。",
+        thu_event1_map: "Google Maps 路線：紐倫堡 → Roth 博覽會 →",
+        pill_taper: "調整訓練",
+        thu_event2_title: "組車檢查與輕鬆騎跑",
+        thu_event2_desc: "於飯店組裝單車並檢查變速煞車，在佩格尼茨河畔進行 20 分鐘輕鬆騎（含 3 組 30 秒高迴轉加速）+ 10 分鐘緩跑。",
+        day_fri_label: "2027 年 7 月 2 日（週五）• 運河試游與路線勘察",
+        pill_swim_recon: "水域試游",
+        fri_event1_title: "官方運河公開練習",
+        fri_event1_desc: "走 A9 號高速公路往南至 Heuberg（約 36 公里 / 30 分鐘）。在美茵—多瑙運河實測防寒衣定位與 2:10 配速節奏。",
+        fri_event1_map: "Google Maps 路線：紐倫堡 → Heuberg 游泳起點 →",
+        pill_course_recon: "賽道勘察",
+        fri_event2_title: "開車實勘 Solarer Berg 與 Greding 坡",
+        fri_event2_desc: "開車勘查重要爬坡與下坡路段，提早確立齒比選擇與輸出上限。",
+        fri_event2_map: "Google Maps 路線：紐倫堡 → Solarer Berg 太陽山勘察 →",
+        day_sat_label: "2027 年 7 月 3 日（週六）• 交車與轉換袋設定",
+        pill_trans: "轉換區",
+        sat_event1_title: "T1 單車交車與藍色轉換袋掛置",
+        sat_event1_desc: "開車前往 T1（Heuberg 運河）。放置戰車並掛妥藍袋（安全帽、卡鞋、初始補給）。再次確認胎壓。",
+        sat_event1_map: "Google Maps 路線：紐倫堡 → T1 轉換區（Heuberg）→",
+        pill_nutr: "飲食補給",
+        sat_event2_title: "飯店高碳晚餐與裝備整裝",
+        sat_event2_desc: "在紐倫堡享用清淡高碳晚餐。沖泡賽晨水壺（Maurten 320），整理車內物品，並設定 03:15 AM 鬧鐘。",
+        day_sun_label: "2027 年 7 月 4 日（週日）• 正賽日 RACE DAY",
+        pill_drive: "賽晨自駕",
+        sun_event1_title: "開車出發：紐倫堡 → Heuberg 游泳起點（A9 南下）",
+        sun_event1_desc: "自紐倫堡出發走 A73 / A9 往南直達 56 號出口（Hilpoltstein）。請務必於 04:15 AM 前出發以避開塞車。切勿穿越 Roth 市中心以免受封路影響。",
+        sun_event1_map: "即時 GPS 自駕導航：紐倫堡 → T1 Heuberg 起點 →",
+        pill_t1: "T1 設定",
+        sun_event2_title: "T1 轉換區開放",
+        sun_event2_desc: "安裝水壺與補給品，確認胎壓（~90 psi），繳交特殊補給袋，06:00 AM 前穿妥防寒衣準備出發。",
+        pill_start: "鳴槍開賽",
+        sun_event3_title: "加農砲鳴槍與分組出發",
+        sun_event3_desc: "3.8 公里運河游泳開賽。嚴格按 2:10/100m 配速穩定游進。",
+        pill_finish: "榮耀完賽",
+        sun_event4_title: "Sub-12 小時體育場完賽",
+        sun_event4_desc: "在日落前踏上萬人 Roth 體育場紅地毯，實現 Sub-12 完賽目標。",
+        sun_event4_map: "Google Maps：Roth 終點體育場導航 →",
+        pill_celeb: "賽後慶祝",
+        sun_event5_title: "終點派對與午夜煙火",
+        sun_event5_desc: "見證所有 17 小時內堅持到底的鐵人，欣賞 Roth 傳統傳奇煙火秀。",
+        day_mon_label: "2027 年 7 月 5 日（週一）• 頒獎典禮與返回紐倫堡",
+        pill_awards: "頒獎典禮",
+        mon_event1_title: "頒獎早午餐與領取完賽證明",
+        mon_event1_desc: "於 Roth 大帳篷進行獎牌雷射刻字、領取完賽證明及購買紀念品，隨後返回紐倫堡。",
+        mon_event1_map: "Google Maps 路線：紐倫堡 → Roth 節慶大帳篷 →",
+        sec_tactics_title: "實戰策略與配速守則",
+        sec_tactics_sub: "各項配速紀律與關鍵路段守則",
+        tactics_bike_tag: "自行車策略",
+        tactics_bike_title: "單車：均速 31 km/h 目標（約 5小時48分）",
+        tactics_bike_1: "<strong>Solarer Berg 太陽山：</strong> 保持輕齒比與高迴轉（85+ RPM）。切勿被熱情的人牆氣氛帶偏輸出。",
+        tactics_bike_2: "<strong>Kalvarienberg 爬坡：</strong> 嚴格將功率限制在閾值以下，為全馬保留腿力。",
+        tactics_bike_3: "<strong>空力姿勢：</strong> 在平路起伏段保持低風阻空力姿勢，穩住 31 km/h 巡航均速。",
+        tactics_bike_4: "<strong>定時飲水：</strong> 每 15–20 分鐘啜飲 <em>Drink Mix 320</em>，確保胃部排空效率。",
+        tactics_run_tag: "路跑策略",
+        tactics_run_title: "全馬：配速 6:30/km 目標（約 4小時34分）",
+        tactics_run_1: "<strong>運河平路段：</strong> 前 25 公里平緩碎石路嚴格按 6:25–6:30/km 穩速前進。",
+        tactics_run_2: "<strong>進水站走動：</strong> 每次進站快走 20–30 秒，確實把水與電解質吞下腹。",
+        tactics_run_3: "<strong>Büchenbach 坡段：</strong> 35 公里上坡段放慢步頻控制心率，隨後順勢跑向體育場。",
+        tactics_run_4: "<strong>Maurten 膠搭配：</strong> 每次吃膠務必配純水，切勿混喝大會提供的普通運動飲料。",
+        sec_check_title: "全方位行前打包與轉換區清單",
+        sec_check_sub: "包含飛行行李、裝車箱、T1/T2 轉換袋及比賽日出發專用清單",
+        chk_travel_tag: "航班與行李打包",
+        chk_travel_title: "出國旅行裝備",
+        chk_p1: "護照與機票電子行程單",
+        chk_p2: "賽事報到 QR Code 與鐵人協會會員證",
+        chk_p3: "裝車箱/裝車袋 + 組車工具與扭力扳手",
+        chk_p4: "歐洲規格轉接頭 + 備用行動電源",
+        chk_p5: "保暖休閒衣物（歐洲早晚溫差大）",
+        chk_p6: "常備處方藥品與個人急救急護包",
+        chk_t1_tag: "T1 • 藍色單車袋",
+        chk_t1_title: "單車裝備與補給",
+        chk_g1: "空力安全帽與風鏡/鏡片",
+        chk_g2: "卡鞋與透氣單車襪",
+        chk_g3: "號碼布腰帶 + 騎行太陽眼鏡",
+        chk_g4: "4 包 Maurten Gel 100 / Gel 100 Caf",
+        chk_g5: "2 支 750ml 水壺（已沖泡 Drink Mix 320）",
+        chk_t2_tag: "T2 • 紅色路跑袋",
+        chk_t2_title: "全馬裝備與補給",
+        chk_g6: "路跑跑鞋 + 快速彈性格免綁鞋帶",
+        chk_g7: "遮陽跑帽 / 空頂帽",
+        chk_g8: "防磨膏（BodyGlide）與水泡貼",
+        chk_g9: "7 包 Maurten Gel 100（含 3 包 Caf 100 咖啡因版）",
+        chk_g10: "電解質膠囊與高濃度鹽錠",
+        chk_am_tag: "賽晨出發隨身包",
+        chk_am_title: "清晨與車內必備",
+        chk_g11: "租車鑰匙與列印之賽事停車證",
+        chk_g12: "計時晶片（確實綁於左腳踝）",
+        chk_g13: "防寒泳衣 + 鍍膜防霧泳鏡",
+        chk_g14: "直立式打氣筒（於 T1 將胎壓打至 ~90 psi）",
+        chk_g15: "1 份 Maurten Drink Mix 160（車上慢飲）",
+        chk_g16: "1 包 Maurten Gel 100（下水前 15 分鐘吞服）",
+        footer_copy: "© 2027 Team DNF Challenge Roth 征戰計畫 • Sub-12 執行策略",
+        footer_top: "回到頂部"
+      }
+    };
+
+    let currentLang = localStorage.getItem('team_dnf_lang') || 'en';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('team_dnf_lang', lang);
+      document.documentElement.lang = lang === 'zh' ? 'zh-TW' : 'en';
+
+      // Update all data-i18n elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+
+      // Update switcher label text
+      const nextLangLabel = lang === 'en' ? '繁中' : 'EN';
+      document.getElementById('langLabelDesktop').innerText = nextLangLabel;
+      document.getElementById('langLabelMobile').innerText = nextLangLabel;
+    }
+
+    function toggleLanguage() {
+      const next = currentLang === 'en' ? 'zh' : 'en';
+      setLanguage(next);
+    }
+
+    document.getElementById('langToggleDesktop').addEventListener('click', toggleLanguage);
+    document.getElementById('langToggleMobile').addEventListener('click', toggleLanguage);
+
+    // Initialize Language
+    setLanguage(currentLang);
+
+    // Mobile Drawer Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // Floating Return-To-Top Button Scroll Handler
+    const backToTopBtn = document.getElementById('backToTopBtn');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Tab Filter
+    const tabButtons = document.querySelectorAll('.seg-btn');
+    const timelineGroups = document.querySelectorAll('.timeline-group');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const selectedDay = button.getAttribute('data-day');
+        timelineGroups.forEach(group => {
+          if (selectedDay === 'all' || group.getAttribute('data-day') === selectedDay) {
+            group.style.display = 'block';
+          } else {
+            group.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Countdown to 4 July 2027, 06:30 AM (Bavaria time GMT+2)
+    const targetDate = new Date("2027-07-04T06:30:00+02:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+        document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+        document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+      } else {
+        document.getElementById("countdown").innerHTML = "<span>Race day underway</span>";
+      }
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
 
